@@ -46,12 +46,19 @@ app.get('/about',(req, res) => {
     });
 });
 
+app.get('/project',(req, res) => {
+    res.render('about.hbs',{
+        about : 'Project page'
+    });
+});
+
 app.get('/bad',(req, res) => {
     res.send({
         statusCode : '404',
         description : 'Bad request'
     })
 });
+
 
 app.listen(port,() => {
     console.log('Server started on port 3000');
